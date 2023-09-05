@@ -1,4 +1,5 @@
 <?php
+use Ramsey\Uuid\Uuid;
 if(isset($_SESSION["userid"])==true  and $_SESSION["usertype"]==0)
 {
 	$soureces=getSources();
@@ -96,7 +97,8 @@ $date=$_POST["date"];
 $type=0;
 $from=$_POST["from"];
 $Syear= $_SESSION["year"];
-$sql=mysqli_query($con,"insert into box values('0',$bid,'$des','0','$date','$from','0','$Syear')");//تغيير بعدين
+$uuid = Uuid::uuid4()->toString();
+$sql=mysqli_query($con,"insert into box values('0',$bid,'$des','0','$date','$from','0','$Syear','$uuid')");//تغيير بعدين
 if(mysqli_error($con))
     AddContent("<br><p class='bg-info'>حدث خطأ في الادخال</p>",'body',1);
 $i=mysqli_insert_id($con);
@@ -979,4 +981,3 @@ AddContent($a,"body",0);
 }
 else
 include("main.php");
-?>
