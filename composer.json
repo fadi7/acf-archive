@@ -1,0 +1,10 @@
+{
+  "require": {
+    "tecnickcom/tcpdf": "^6.2",
+    "setasign/fpdi": "^2.3",
+    "ramsey/uuid": "^4.7"
+  },
+  "autoload": {
+    "psr-4": {}
+  }
+}

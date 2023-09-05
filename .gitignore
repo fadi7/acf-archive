@@ -1,0 +1,6 @@
+vendor
+error_log
+!box
+box/*
+boxe
+cgi-bin
